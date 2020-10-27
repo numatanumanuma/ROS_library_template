@@ -1,8 +1,8 @@
-#include "library_tmp/library_tmp.h"
+#include "library_template/library_template.h"
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "library_tmp");
+  ros::init(argc, argv, "library_usage");
   //ノード名の初期化
 
   LibraryTmp a;

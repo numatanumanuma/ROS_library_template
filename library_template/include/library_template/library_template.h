@@ -1,5 +1,5 @@
-#ifndef LIBRARY_TMP_H
-#define LIBRARY_TMP_H
+#ifndef library_template_H
+#define library_template_H
 
 #include "ros/ros.h"
 #include <geometry_msgs/Twist.h>
