@@ -1,0 +1,24 @@
+<launch>
+
+    <arg name="flag" default="false"/>
+    <arg name="topic" default="/cmd_vel"/>
+
+    <node pkg="package_name" name="name1" type="node_name1" output="screen" respawn="true"/>
+
+    <node pkg="package_name" name="name2" type="node_name2" output="screen" required="true">
+        <param name="param1" value="hoge"/>
+        <remap from="/scan" to="$(arg topic)"/>
+    </node>
+
+    <include file="$(find library_usage)/launch/usage1.launch">
+        <arg name="usage_flag" value="$(arg flag)"/>
+    </include>
+
+    <group if="$(arg flag)">
+        <include file="$(find library_usage)/launch/usage2.launch"/>
+    </group>
+    <group unless="$(arg flag)">
+        <include file="$(find library_usage)/launch/usage3.launch"/>
+    </group>
+
+</launch>
